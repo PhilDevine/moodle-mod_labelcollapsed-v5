@@ -1,8 +1,9 @@
 /* Clickable section headers */
 .modtype_labelcollapsed .lc_section {
     cursor: pointer;
-    position: relative;
-    padding-right: 32px; /* space for arrow icon */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* space between text and arrow */
 }
 
 /* Optional: adjust number badge in title */
@@ -15,20 +16,15 @@
     font-family: "FontAwesome";
     font-weight: 400;
     font: var(--fa-font-solid);
-    font-size: 25px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%) rotateZ(0deg);
-    right: 0;
-    margin-left: 8px;
-    color: #808080; /* medium gray */
-    content: "\f0a9"; /* right arrow */
+    font-size: 25px; /* Restore original large size */
+    color: #808080;
+    content: "\f0a9";
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
 /* Arrow icon: rotate and change to dark gray when expanded */
 .modtype_labelcollapsed .lc_section.show::after {
-    transform: translateY(-50%) rotateZ(90deg);
+    transform: rotateZ(90deg);
     color: #333333; /* dark gray */
 }
 
@@ -40,7 +36,6 @@
     display: block !important;
 }
 
-/* Expanded state (JS sets max-height dynamically) */
 .collapse.show {
-    /* nothing needed here */
+    /* nothing needed here; JS will set max-height */
 }
