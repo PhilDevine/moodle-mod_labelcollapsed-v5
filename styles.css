@@ -3,7 +3,7 @@
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 8px; /* space between text and arrow */
+    gap: 8px;
 }
 
 /* Optional: adjust number badge in title */
@@ -16,7 +16,7 @@
     font-family: "FontAwesome";
     font-weight: 400;
     font: var(--fa-font-solid);
-    font-size: 25px; /* Restore original large size */
+    font-size: 25px;
     color: #808080;
     content: "\f0a9";
     transition: transform 0.3s ease, color 0.3s ease;
@@ -25,17 +25,17 @@
 /* Arrow icon: rotate and change to dark gray when expanded */
 .modtype_labelcollapsed .lc_section.show::after {
     transform: rotateZ(90deg);
-    color: #333333; /* dark gray */
+    color: #333333;
 }
 
-/* Reveal animation for collapsible content */
-.collapse {
+/* Reveal animation for collapsible content (scoped!) */
+.modtype_labelcollapsed .collapse {
     overflow: hidden;
     transition: max-height 0.35s ease;
     max-height: 0;
     display: block !important;
 }
 
-.collapse.show {
-    /* nothing needed here; JS will set max-height */
+.modtype_labelcollapsed .collapse.show {
+    max-height: 500px;
 }
